@@ -18,11 +18,11 @@ var commentRoutes    = require("./routes/comments"),
    
 console.log(process.env.DATABASEURL)
 //Local MongoDB
-mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true, useUnifiedTopology: true});
-
+mongoose.connect(process.env.DATABASEURL);
+// only for web heroku place it in above code like this 
+// mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true, useUnifiedTopology: true});
 //Heroku
-//mongoose.connect("mongodb+srv://userdatabase:%27p%40ssword%27@cluster0.0lolt.mongodb.net/yelppcampp?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true});
-
+//mongoose.connect("connection address here for MonDBAtlas", { useNewUrlParser: true, useUnifiedTopology: true});
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
