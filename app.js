@@ -54,7 +54,7 @@ app.use("/campgrounds/:id/comments", commentRoutes);
 //    console.log("The YelpCamp Server 6987 has started");
 // });
 
-app.listen(6987 || process.env.PORT, process.env.IP, function(){
+app.listen(process.env.PORT, process.env.IP, function(){
    console.log("The YelpCamp Server Has Started!");
 });
 
