@@ -17,7 +17,7 @@ var commentRoutes    = require("./routes/comments"),
     indexRoutes      = require("./routes/index")
     
 
-mongoose.connect("mongodb+srv://testuser:Yelpcamp123@cluster0.0lolt.mongodb.net/yelp_camp?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect("mongodb+srv://userdatabase:Yelpcamp123@cluster0.0lolt.mongodb.net/yelppcampp?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true});
 
 
 app.use(bodyParser.urlencoded({extended: true}));
