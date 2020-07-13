@@ -15,12 +15,13 @@ var express     = require("express"),
 var commentRoutes    = require("./routes/comments"),
     campgroundRoutes = require("./routes/campgrounds"),
     indexRoutes      = require("./routes/index")
-    
-//Heroku
-mongoose.connect("mongodb+srv://userdatabase:Yelpcamp123@cluster0.0lolt.mongodb.net/yelppcampp?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true});
-
+   
+console.log(process.env.DATABASEURL)
 //Local MongoDB
-// mongoose.connect("mongodb://localhost:27017/yelp_camp", { useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true, useUnifiedTopology: true});
+
+//Heroku
+//mongoose.connect("mongodb+srv://userdatabase:Yelpcamp123@cluster0.0lolt.mongodb.net/yelppcampp?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true});
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
@@ -53,14 +54,15 @@ app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
 //Heroku Web
-app.listen(process.env.PORT, process.env.IP, function(){
-   console.log("The YelpCamp Server Has Started!");
-});
+// app.listen(process.env.PORT, process.env.IP, function(){
+//    console.log("The YelpCamp Server Has Started!");
+// });
 
 //Local web
-// app.listen(6987, function(){
-// 	console.log("The Yelpcamp at 6987 has started")
-// });
+app.listen(6987, function(){
+	console.log("The Yelpcamp at 6987 has started")
+});
+
 
 // var server_port = process.env.YOUR_PORT || process.env.PORT || 80;
 // var server_host = process.env.YOUR_HOST || '0.0.0.0';
