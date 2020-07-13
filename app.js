@@ -54,15 +54,15 @@ app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
 //Heroku Web
-// app.listen(process.env.PORT, process.env.IP, function(){
-//    console.log("The YelpCamp Server Has Started!");
-// });
-
-//Local web
-app.listen(6987, function(){
-	console.log("The Yelpcamp at 6987 has started")
+app.listen(process.env.PORT, process.env.IP, function(){
+   console.log("The YelpCamp Server Has Started!");
 });
 
+
+//Local web
+// app.listen(6987, function(){
+// 	console.log("The Yelpcamp at 6987 has started")
+// });
 
 // var server_port = process.env.YOUR_PORT || process.env.PORT || 80;
 // var server_host = process.env.YOUR_HOST || '0.0.0.0';
