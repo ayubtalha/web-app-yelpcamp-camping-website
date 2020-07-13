@@ -18,9 +18,9 @@ var commentRoutes    = require("./routes/comments"),
    
 console.log(process.env.DATABASEURL)
 //Local MongoDB
-mongoose.connect(process.env.DATABASEURL);
+//mongoose.connect(process.env.DATABASEURL);
 // only for web heroku place it in above code like this 
-// mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true, useUnifiedTopology: true});
 //Heroku
 //mongoose.connect("connection address here for MonDBAtlas", { useNewUrlParser: true, useUnifiedTopology: true});
 
