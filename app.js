@@ -21,8 +21,6 @@ console.log(process.env.DATABASEURL)
 //mongoose.connect(process.env.DATABASEURL);
 // only for web heroku place it in above code like this 
 mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true, useUnifiedTopology: true});
-//Heroku
-//mongoose.connect("connection address here for MonDBAtlas", { useNewUrlParser: true, useUnifiedTopology: true});
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
